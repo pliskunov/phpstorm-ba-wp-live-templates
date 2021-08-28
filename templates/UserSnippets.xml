@@ -1,0 +1,102 @@
+<templateSet group="UserSnippets">
+  <template name="brp" value="@include breakpoint($VAR$){&#10;    $END$&#10;}" description="Bootstrap breakpoint" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="CSS" value="true" />
+    </context>
+  </template>
+  <template name="komm" value="/*&#10;Theme Name: name&#10;Theme URI: https://losos.tech/themes/name/&#10;Author: Misha Pliskunov&#10;Author URI: https://losos.tech/&#10;Description: Training WordPress theme while attending Beetroot academy classes&#10;Version: 1.0&#10;License: GNU General Public License v2 or later&#10;License URI: http://www.gnu.org/licenses/gpl-2.0.html&#10;&#10;*/" description="make style.css WP comment for theme development" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="CSS" value="true" />
+    </context>
+  </template>
+  <template name="di" value="&lt;!-- BEGIN  $MYTEXT$ --&gt;&#10;&lt;div class=&quot;$MYTEXT$&quot;&gt;&#10;    $END$&#10;&lt;/div&gt;&#10;&lt;!-- END  $MYTEXT$ --&gt;" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="MYTEXT" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="ph" value="&lt;?php $MYTEXT$ ?&gt;" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="MYTEXT" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="br" value="@include breakpoint($medium$){&#10;&#9;$END$&#10;}" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="medium" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="CSS" value="true" />
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="gf" value="get_field('$MYTEXT$');" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="MYTEXT" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="if" value="if ($COND$) {&#10;    $END$&#10;}" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="COND" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="ifel" value="if ($COND$) {&#10;    $END$&#10;}&#10;else {&#10;    &#10;}" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="COND" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="ifpost" value="&lt;?php if ( $1$-&gt;have_posts()) : ?&gt;&#10;    &lt;?php while ( $1$-&gt;have_posts() ) : $1$-&gt;the_post(); ?&gt;&#10;        $2$&#10;    &lt;?php endwhile; ?&gt;&#10;&lt;?php endif; ?&gt;" description="if-while" toReformat="false" toShortenFQNames="true">
+    <variable name="1" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="2" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="tf" value="the_field('$1$');" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="1" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="iffield" value="&lt;?php if($$$1$ = get_field('$1$'$2$)) : ?&gt;&#10;&#9;$END$&#10;&lt;?php endif; ?&gt;" description="if-while" toReformat="false" toShortenFQNames="true">
+    <variable name="1" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="2" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="ifrow" value="&lt;?php if (have_rows('$1$'$2$)) : ?&gt;&#10;&#9; &lt;?php while (have_rows('$1$'$2$)) : the_row(); ?&gt;&#10;&#9;&#9;$END$&#10;&#9; &lt;?php endwhile; ?&gt;&#10;&lt;?php endif; ?&gt;" description="if-while" toReformat="false" toShortenFQNames="true">
+    <variable name="1" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="2" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="cwp" value="&lt;?php &#10;$$$1$Args = array(&#10;&#9;'post_type'=&gt;'$2$',&#10;&#9;'posts_per_page'=&gt;$3$,&#10;&#9;'orderby'=&gt;'$4$',&#10;&#9;'order'=&gt;'$5$'&#10;);&#10;&#9;$$$1$ = new WP_Query($$$1$Args);?&gt;&#10;&#9;&lt;?php if($$$1$-&gt;have_posts()): ?&gt;&#10;&#9;&#9;&lt;?php while($$$1$-&gt;have_posts()): $$$1$-&gt;the_post() ?&gt;&#10;&#9;&#9;&#9;$END$&#10;&#9;&#9;&lt;?php endwhile; ?&gt;&#10;&#9;&lt;?php endif;?&gt;" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="1" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="2" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="3" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="4" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="5" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="debier" value="&lt;b style=&quot;position: fixed; left:20px; top:40px; z-index: 10; color: fuchsia;&quot;&gt;&#10;&#9;&lt;?php&#10;&#9;global $template;&#10;&#9;print_r( basename( $template ) );&#10;&#9;?&gt;&#10;&lt;/b&gt;" description="debugger for WP hierarchy" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+</templateSet>
